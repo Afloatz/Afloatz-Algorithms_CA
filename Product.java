@@ -17,7 +17,7 @@ class Product implements Comparable<Object> {
     private String productType;
 
     // constructor
-    public Product(int productID, String productName, String productDescription, float productPrice, String productType) {
+    public Product(int productID, String productName, String productDescription, float productPrice, String productType){
         setProductID(productID);
         setProductName(productName);
         setProductDescription(productDescription);
@@ -57,13 +57,19 @@ class Product implements Comparable<Object> {
         return productPrice;
     }
 
-    public void setProductType(String productType) throws ProductTypeException {
+    public void setProductType(String productType) {
 
-        // put the try-catch here
-        if (productType.equalsIgnoreCase("Hardware") || productType.equalsIgnoreCase("Software") || productType.equalsIgnoreCase("Service")) {
-            this.productType = productType;
-        } else {        
-            throw new ProductTypeException("Product type can only be 'Hardware', 'Software' or 'Service'");
+        // PART 2 - QUESTION 1
+        // throw custom exception if product type is not correct
+        try {          
+            if (productType.equalsIgnoreCase("Hardware") || productType.equalsIgnoreCase("Software") || productType.equalsIgnoreCase("Service")) {              
+                this.productType = productType;
+            } else {
+                throw new ProductTypeException("Product type can only be 'Hardware', 'Software' or 'Service'");
+            }
+            
+        } catch (ProductTypeException ex) {
+            System.out.println(ex.toString());
         }
         
     }
