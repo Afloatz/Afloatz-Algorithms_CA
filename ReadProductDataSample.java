@@ -25,7 +25,7 @@ public class ReadProductDataSample {
             st = sc.nextLine();
             st = st.replace("\"", "");
             String[] data = st.split(",");
-            // System.out.println(st);
+            System.out.println(st);
 
             products[i] = new Product(Integer.parseInt(data[0]), data[1], data[2], Float.parseFloat(data[3]), data[4]);
             i++;

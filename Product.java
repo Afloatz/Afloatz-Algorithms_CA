@@ -50,7 +50,16 @@ class Product implements Comparable<Object> {
     }
 
     private void setProductPrice(float productPrice) {
-        this.productPrice = productPrice;
+
+        // PART 2 - QUESTION 2
+        // check if the price is between a range (between 1$ and 9999$)
+        if (productPrice >= 1 && productPrice <= 9999) {
+            this.productPrice = productPrice;
+        // alert the user if the price entered is out of the range    
+        } else {
+            System.out.println("Product price is not correct, please update the value.");
+        }
+        
     }
 
     public float getProductPrice() {
@@ -60,12 +69,13 @@ class Product implements Comparable<Object> {
     public void setProductType(String productType) {
 
         // PART 2 - QUESTION 1
-        // throw custom exception if product type is not correct
+        // throw a custom exception defined in the ProductTypeException class if product type is not correct 
+        // Product type must be Hardware, Software or Service
         try {          
             if (productType.equalsIgnoreCase("Hardware") || productType.equalsIgnoreCase("Software") || productType.equalsIgnoreCase("Service")) {              
                 this.productType = productType;
             } else {
-                throw new ProductTypeException("Product type can only be 'Hardware', 'Software' or 'Service'");
+                throw new ProductTypeException("Product type can only be 'Hardware', 'Software' or 'Service'. Please correct the product Type.");
             }
             
         } catch (ProductTypeException ex) {
