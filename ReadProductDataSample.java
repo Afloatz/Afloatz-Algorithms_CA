@@ -25,7 +25,7 @@ public class ReadProductDataSample {
             st = sc.nextLine();
             st = st.replace("\"", "");
             String[] data = st.split(",");
-            System.out.println(st);
+            // System.out.println(st);
 
             products[i] = new Product(Integer.parseInt(data[0]), data[1], data[2], Float.parseFloat(data[3]), data[4]);
             i++;
@@ -40,25 +40,32 @@ public class ReadProductDataSample {
         // we can compare products based on their name due to overridden CompareTo method in Product class
         // System.out.println(products[0] == products[1]);
 
+        // Please comment out part of the code that you want to use.
         
-        // QUESTION 1 - BUBBLESORT
+        // QUESTION 1 - BUBBLE SORT
+        // Sort the products array by productName using bubble sort algorithm
         Product[] arr = Arrays.copyOf(products, products.length); // copy of the array in order to keep the unsorted original one
+        // Below are different sizes (10,100, 1000) of the array products for the running time calculation:
         // Object[] arr = Arrays.copyOf(products, 10);
         // Object[] arr = Arrays.copyOf(products, 100);
         // Object[] arr = Arrays.copyOf(products, 1000);
         long startTime1 = System.nanoTime();
         Product.bubbleSortProduct(arr);
-        long elapsedTime1 = System.nanoTime() - startTime1;
+        long elapsedTime1 = System.nanoTime() - startTime1; // calculate the time bubbleSortProduct() took to run
 
-        // System.out.println("Sorted values with bubbleSort: ");
-        // for (int j = 0; j < arr.length; j++) {
-        //     System.out.println(arr[j]);
-        // } 
+        // Display the sorted array using Bubble Sort
+        System.out.println("======================================");
+        System.out.println("Sorted values with bubbleSort: ");
+        for (int j = 0; j < arr.length; j++) {
+            System.out.println(arr[j]);
+        } 
 
         System.out.println("======================================");
 
         // QUESTION 2 - QUICKSORT
+        // Sort the products array by productName using quick sort algorithm
         Product[] arr2 = Arrays.copyOf(products, products.length);
+        // Below are different sizes (10,100, 1000) of the array products for the running time calculation:
         // Object[] arr2 = Arrays.copyOf(products, 10);
         // Object[] arr2 = Arrays.copyOf(products, 100);
         // Object[] arr2 = Arrays.copyOf(products, 1000);
@@ -67,8 +74,9 @@ public class ReadProductDataSample {
         // Product.quickSortProduct(arr2, 0, 9); 
         // Product.quickSortProduct(arr2, 0, 99); 
         // Product.quickSortProduct(arr2, 0, 999); 
-        long elapsedTime2 = System.nanoTime() - startTime2;     
+        long elapsedTime2 = System.nanoTime() - startTime2; // calculate the time quickSortProduct() took to run
 
+        // // Display the sorted array using Quick Sort
         // System.out.println("Sorted values with quickSort: ");
         // for (int j = 0; j < arr2.length; j++) {
         //     System.out.println(arr2[j]);
@@ -78,17 +86,29 @@ public class ReadProductDataSample {
 
 
         // QUESTION 3 - ELAPSED TIMES
+        // Display the running times of the bubble sort and quick sort algorithms
         System.out.println("Elapsed Time of bubbleSort: " + elapsedTime1 + " Nanosecond");
         System.out.println("Elapsed Time of quickSort: " + elapsedTime2 + " Nanosecond");
         System.out.println("======================================");
         
         // QUESTION 4 - BINARY SEARCH
 
-        int key = 4000;
-        int foundAt = Product.binarySearchProduct(products, 0, products.length-1, key);
-        System.out.println("Product ID: " + products[foundAt].getProductID() + "\nProduct name: " + products[foundAt].getProductName() + "\nDescription: " + products[foundAt].getProductDescription() + "\nPrice: " + products[foundAt].getProductPrice() + "\nType: " + products[foundAt].getProductType() );
-
-
+        // Look for a specific productID inside the products array
+        int key = 4000; // productID to search for
+        int foundAt = Product.binarySearchProduct(products, 0, products.length-1, key); // the input data must be a sorted array (products is sorted by productID)
+        if (foundAt == -1) {
+            // display a message if product is not found
+            System.out.println("The product is not in the list.");
+        } else {
+            // display the corresponding product description
+            System.out.println("Product is found. Product information:");
+            System.out.println("Product ID: " + products[foundAt].getProductID() +
+            "\nProduct name: " + products[foundAt].getProductName() +
+            "\nDescription: " + products[foundAt].getProductDescription() + 
+            "\nPrice: " + products[foundAt].getProductPrice() + 
+            "\nType: " + products[foundAt].getProductType() );
+        }
+        
     }
 
 }
