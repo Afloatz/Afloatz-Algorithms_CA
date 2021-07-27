@@ -46,9 +46,9 @@ public class ReadProductDataSample {
         // Sort the products array by productName using bubble sort algorithm
         Product[] arr = Arrays.copyOf(products, products.length); // copy of the array in order to keep the unsorted original one
         // Below are different sizes (10,100, 1000) of the array products for the running time calculation:
-        // Object[] arr = Arrays.copyOf(products, 10);
-        // Object[] arr = Arrays.copyOf(products, 100);
-        // Object[] arr = Arrays.copyOf(products, 1000);
+        // Product[] arr = Arrays.copyOf(products, 10);
+        // Product[] arr = Arrays.copyOf(products, 100);
+        // Product[] arr = Arrays.copyOf(products, 1000);
         long startTime1 = System.nanoTime();
         Product.bubbleSortProduct(arr);
         long elapsedTime1 = System.nanoTime() - startTime1; // calculate the time bubbleSortProduct() took to run
@@ -66,9 +66,9 @@ public class ReadProductDataSample {
         // Sort the products array by productName using quick sort algorithm
         Product[] arr2 = Arrays.copyOf(products, products.length);
         // Below are different sizes (10,100, 1000) of the array products for the running time calculation:
-        // Object[] arr2 = Arrays.copyOf(products, 10);
-        // Object[] arr2 = Arrays.copyOf(products, 100);
-        // Object[] arr2 = Arrays.copyOf(products, 1000);
+        // Product[] arr2 = Arrays.copyOf(products, 10);
+        // Product[] arr2 = Arrays.copyOf(products, 100);
+        // Product[] arr2 = Arrays.copyOf(products, 1000);
         long startTime2 = System.nanoTime();
         Product.quickSortProduct(arr2, 0, 9999);  
         // Product.quickSortProduct(arr2, 0, 9); 
