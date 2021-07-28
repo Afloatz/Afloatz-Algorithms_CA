@@ -116,9 +116,7 @@ public class ReadProductDataSample {
 
 
         // QUESTION 2
-        // Uncomment the code in setProductPrice() and print the original products array to see warning message displayed
-        // if the price is too low or too high. The original array contains out-of-range value
-
+        // products[1].setProductPriceRange(0.9f); // test to see if setting the product price to a wrong value display an alert message
         
     }
 

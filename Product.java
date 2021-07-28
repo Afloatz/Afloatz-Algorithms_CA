@@ -50,17 +50,20 @@ class Product implements Comparable<Object> {
     }
 
     private void setProductPrice(float productPrice) {
+        this.productPrice = productPrice;        
+    }
 
-        // PART 2 - QUESTION 2
-        // Uncomment below code when checking Part 2 of the CA
+    // PART 2 - QUESTION 2
+    public void setProductPriceRange(float productPrice) {
+
         // check if the input is accurate or not
         // check if the price is between a range (between 1$ and 9999$)
-        // if (productPrice >= 1 && productPrice <= 9999) {
+        if (productPrice >= 1 && productPrice <= 9999) {
             this.productPrice = productPrice;
         // alert the user if the price entered is out of the range    
-        // } else {
-        //     System.out.println("Product price is not correct, please update the value.");
-        // }
+        } else {
+            System.out.println("Product price is not correct, please update the value.");
+        }
         
     }
 
