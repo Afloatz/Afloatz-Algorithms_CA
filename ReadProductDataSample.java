@@ -42,6 +42,7 @@ public class ReadProductDataSample {
 
         // Please comment out part of the code that you want to use.
         
+        // PART 1
         // QUESTION 1 - BUBBLE SORT
         // Sort the products array by productName using bubble sort algorithm
         Product[] arr = Arrays.copyOf(products, products.length); // copy of the array in order to keep the unsorted original one
@@ -108,6 +109,16 @@ public class ReadProductDataSample {
             "\nPrice: " + products[foundAt].getProductPrice() + 
             "\nType: " + products[foundAt].getProductType() );
         }
+
+        // PART 2
+        // QUESTION 1 
+        // products[1].setProductType("work"); // test to see if setting the product type to a wrong value throw an exception
+
+
+        // QUESTION 2
+        // Uncomment the code in setProductPrice() and print the original products array to see warning message displayed
+        // if the price is too low or too high. The original array contains out-of-range value
+
         
     }
 
