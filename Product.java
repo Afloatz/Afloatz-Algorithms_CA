@@ -87,7 +87,8 @@ class Product implements Comparable<Object> {
             }
             
         } catch (ProductTypeException ex) {
-            System.out.println(ex.toString());
+            // display exception error message if exception is caught
+            System.out.println(ex);
         }
         
     }

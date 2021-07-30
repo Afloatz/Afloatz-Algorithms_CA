@@ -46,7 +46,7 @@ public class ReadProductDataSample {
         // QUESTION 1 - BUBBLE SORT
         // Sort the products array by productName using bubble sort algorithm
         Product[] arr = Arrays.copyOf(products, products.length); // copy of the array in order to keep the unsorted original one
-        // Below are different sizes (10,100, 1000) of the array products for the running time calculation:
+        // Below are different sizes of the products array (10,100, 1000) for the running time calculation:
         // Product[] arr = Arrays.copyOf(products, 10);
         // Product[] arr = Arrays.copyOf(products, 100);
         // Product[] arr = Arrays.copyOf(products, 1000);
@@ -66,7 +66,7 @@ public class ReadProductDataSample {
         // QUESTION 2 - QUICKSORT
         // Sort the products array by productName using quick sort algorithm
         Product[] arr2 = Arrays.copyOf(products, products.length);
-        // Below are different sizes (10,100, 1000) of the array products for the running time calculation:
+        // Below are different sizes of the products array (10,100, 1000) for the running time calculation:
         // Product[] arr2 = Arrays.copyOf(products, 10);
         // Product[] arr2 = Arrays.copyOf(products, 100);
         // Product[] arr2 = Arrays.copyOf(products, 1000);
@@ -101,7 +101,7 @@ public class ReadProductDataSample {
             // display a message if product is not found
             System.out.println("The product is not in the list.");
         } else {
-            // display the corresponding product description
+            // display the corresponding product description if found
             System.out.println("Product is found. Product information:");
             System.out.println("Product ID: " + products[foundAt].getProductID() +
             "\nProduct name: " + products[foundAt].getProductName() +
@@ -116,8 +116,8 @@ public class ReadProductDataSample {
 
 
         // QUESTION 2
-        // products[1].setProductPriceRange(0.9f); // test to see if setting the product price to a wrong value display an alert message
-        
+        // products[1].setProductPriceRange(0.9f); // test to see if setting the product price to a value that is too low display an alert message
+        products[1].setProductPriceRange(10000f); // value that is too high
     }
 
 }
