@@ -117,7 +117,7 @@ public class ReadProductDataSample {
 
         // QUESTION 2
         // products[1].setProductPriceRange(0.9f); // test to see if setting the product price to a value that is too low display an alert message
-        products[1].setProductPriceRange(10000f); // value that is too high
+        // products[1].setProductPriceRange(10000f); // value that is too high
     }
 
 }
