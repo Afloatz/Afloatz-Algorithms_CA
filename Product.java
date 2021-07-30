@@ -82,7 +82,7 @@ class Product implements Comparable<Object> {
                 this.productType = productType;
             } else {
                 // throw the exception if the product type is not correct
-                // customed message is defined here
+                // custom message is defined here
                 throw new ProductTypeException("Product type can only be 'Hardware', 'Software' or 'Service'. Please correct the product Type.");
             }
             
